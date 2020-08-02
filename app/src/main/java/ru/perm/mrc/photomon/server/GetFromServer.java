@@ -12,6 +12,8 @@ public class GetFromServer {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        db.delete(DBContract.TasksTable.TABLE_NAME,null,null);
+
         ContentValues values = new ContentValues();
         long taskID;
         long catID;
