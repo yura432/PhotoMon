@@ -12,7 +12,7 @@ import ru.perm.mrc.photomon.data.DBContract.*;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private final static String DB_NAME = "tasks.db";
+    private final static String DB_NAME = "task.db";
 
     private static int version = 1;
 
@@ -42,7 +42,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 + ProductsTable.COLUMN_NAME + " TEXT NOT NULL, "
                 + ProductsTable.COLUMN_COMMENT + " TEXT NOT NULL, "
                 + ProductsTable.COLUMN_CATEGORY_ID + " INTEGER NOT NULL, "
-                + ProductsTable.COLUMN_PHOTO_FILENAME + "TEXT NOT NULL, "
+                + ProductsTable.COLUMN_PHOTO_FILENAME + " TEXT NOT NULL, "
+
                 + ProductsTable.COLUMN_STATE + " INTEGER NOT NULL DEFAULT " + ProductsTable.STATE_NOT_STARTED + ","
                 + " FOREIGN KEY (" + ProductsTable.COLUMN_CATEGORY_ID + ") REFERENCES " + CategoriesTable.TABLE_NAME + "(" +CategoriesTable._ID +"));";
 

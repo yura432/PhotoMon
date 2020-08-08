@@ -1,5 +1,6 @@
 package ru.perm.mrc.photomon;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -51,10 +52,10 @@ public class TasksActivity extends AppCompatActivity implements View.OnClickList
         Cursor cursor = db.query(DBContract.TasksTable.TABLE_NAME,columns,null,null,null,null,null);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        TextView textView;
+
         tasks.removeAllViews();
         while (cursor.moveToNext()){
-            textView = (TextView) getLayoutInflater().inflate(R.layout.fragment_task,null);
+            TextView textView = (TextView) getLayoutInflater().inflate(R.layout.fragment_task,null);
             textView.setText(cursor.getString(cursor.getColumnIndex(DBContract.TasksTable.COLUMN_NAME)));
 
             textView.setId(cursor.getInt(cursor.getColumnIndex(DBContract.TasksTable._ID)));
@@ -63,6 +64,10 @@ public class TasksActivity extends AppCompatActivity implements View.OnClickList
 
             tasks.addView(textView,layoutParams);
 
+            
+
+
+
         }
 
     }
@@ -70,6 +75,12 @@ public class TasksActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        view.getId();
+
+        TextView textView = (TextView) view;
+
+        Intent intent = new Intent(this,CategoriesActivity.class);
+        intent.putExtra("taskID",view.getId());
+        intent.putExtra("taskName", textView.getText());
+        startActivity(intent);
     }
 }
