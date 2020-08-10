@@ -27,13 +27,13 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
 
-import ru.perm.mrc.photomon.CameraActivity;
+import ru.perm.mrc.photomon.activities.CameraActivity;
 
 import static android.hardware.camera2.CaptureRequest.JPEG_ORIENTATION;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 import static java.lang.Math.round;
-import static ru.perm.mrc.photomon.CameraActivity.LOG_TAG;
+import static ru.perm.mrc.photomon.activities.CameraActivity.LOG_TAG;
 
 public class CameraService {
 

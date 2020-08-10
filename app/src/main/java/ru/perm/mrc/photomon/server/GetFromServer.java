@@ -31,17 +31,47 @@ public class GetFromServer {
         catID = db.insert(DBContract.CategoriesTable.TABLE_NAME,null,values);
         values.clear();
 
+        for (int i = 0; i < 30; i++){
+            values.put(DBContract.ProductsTable.COLUMN_CATEGORY_ID, catID);
+            values.put(DBContract.ProductsTable.COLUMN_NAME,"макароны № " + i);
+            values.put(DBContract.ProductsTable.COLUMN_COMMENT, "это длинный комментарий каких-то макаронов № " + i + ", очень длинный" +
+                    " совсем не уникальный, просто жуть какая-то написана здесь. Полный бред, реально. " + i);
+            values.put(DBContract.ProductsTable.COLUMN_PHOTO_FILENAME, 12327000 + i);
+            db.insert(DBContract.ProductsTable.TABLE_NAME, null,values);
+            values.clear();
+        }
+
         values.put(DBContract.CategoriesTable.COLUMN_NAME, "масло");
         values.put(DBContract.CategoriesTable.COLUMN_TASK_ID,taskID);
 
         catID = db.insert(DBContract.CategoriesTable.TABLE_NAME,null,values);
         values.clear();
 
+        for (int i = 0; i < 30; i++){
+            values.put(DBContract.ProductsTable.COLUMN_CATEGORY_ID, catID);
+            values.put(DBContract.ProductsTable.COLUMN_NAME,"масло № " + i);
+            values.put(DBContract.ProductsTable.COLUMN_COMMENT, "это длинный комментарий каких-то макаронов № " + i + ", очень длинный" +
+                    " совсем не уникальный, просто жуть какая-то написана здесь. Полный бред, реально. " + i);
+            values.put(DBContract.ProductsTable.COLUMN_PHOTO_FILENAME, 12327000 + i);
+            db.insert(DBContract.ProductsTable.TABLE_NAME, null,values);
+            values.clear();
+        }
+
         values.put(DBContract.CategoriesTable.COLUMN_NAME, "крупы");
         values.put(DBContract.CategoriesTable.COLUMN_TASK_ID,taskID);
 
         catID = db.insert(DBContract.CategoriesTable.TABLE_NAME,null,values);
         values.clear();
+
+        for (int i = 0; i < 30; i++){
+            values.put(DBContract.ProductsTable.COLUMN_CATEGORY_ID, catID);
+            values.put(DBContract.ProductsTable.COLUMN_NAME,"крупы № " + i);
+            values.put(DBContract.ProductsTable.COLUMN_COMMENT, "это длинный комментарий каких-то макаронов № " + i + ", очень длинный" +
+                    " совсем не уникальный, просто жуть какая-то написана здесь. Полный бред, реально. " + i);
+            values.put(DBContract.ProductsTable.COLUMN_PHOTO_FILENAME, 12327000 + i);
+            db.insert(DBContract.ProductsTable.TABLE_NAME, null,values);
+            values.clear();
+        }
 
 
 

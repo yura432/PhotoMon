@@ -1,4 +1,4 @@
-package ru.perm.mrc.photomon;
+package ru.perm.mrc.photomon.activities;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import ru.perm.mrc.photomon.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -45,6 +45,4 @@ public final class DBContract {
         public static final int STATE_NO_PRODUCT = 1;
         public static final int STATE_NOT_STARTED = 2;
     }
-
-
 }

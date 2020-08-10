@@ -1,4 +1,4 @@
-package ru.perm.mrc.photomon;
+package ru.perm.mrc.photomon.activities;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -11,12 +11,11 @@ import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import ru.perm.mrc.photomon.R;
 import ru.perm.mrc.photomon.camera.CameraService;
 
 public class CameraActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener {
@@ -67,10 +66,6 @@ public class CameraActivity extends AppCompatActivity implements TextureView.Sur
         cameraService = new CameraService(this, cameraManager, imageView, metrics, getExternalFilesDir(null));
 
 
-    }
-
-    public void setLayoutParams(View view, int width, int height){
-        imageView.setLayoutParams(new FrameLayout.LayoutParams(width,height));
     }
 
     @Override

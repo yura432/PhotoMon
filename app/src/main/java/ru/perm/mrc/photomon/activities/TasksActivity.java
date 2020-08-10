@@ -1,4 +1,4 @@
-package ru.perm.mrc.photomon;
+package ru.perm.mrc.photomon.activities;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ru.perm.mrc.photomon.R;
 import ru.perm.mrc.photomon.data.DBContract;
 import ru.perm.mrc.photomon.data.DBHelper;
 import ru.perm.mrc.photomon.server.GetFromServer;
@@ -64,11 +65,8 @@ public class TasksActivity extends AppCompatActivity implements View.OnClickList
 
             tasks.addView(textView,layoutParams);
 
-            
-
-
-
         }
+        cursor.close();
 
     }
 
